@@ -51,7 +51,7 @@ node client/client3.js
 node client/client4.js
 ```
 
-## Send ultiple buy and sell orders through file
+## Send multiple buy and sell orders through file
 ```
 node test.js
 ```
@@ -60,8 +60,8 @@ node test.js
 - [x] Set up a Grenache network with multiple nodes (clients)
 - [x] Each client will have its own instance of the order book
 - [x] configure the network, and establish node discovery each other
-- [ ] Implement the service for submitting orders on each client node using Grenache
-- [ ] Order Book Structure 
+- [x] Implement the service for submitting orders on each client node using Grenache
+- [x] Order Book Structure 
     - [x] List of Buy Orders
     - [x] List of Sell Orders
     - [x] Add Order Function 
@@ -69,20 +69,20 @@ node test.js
     - [x] Match Order Function 
 - [x] Implement a service on each client node that allows users to submit buy and sell orders
 - [x] When an order is submitted, broadcast it to other nodes in the Grenache network
-- [x] Implement the order matching logic on each client node
+- [x] Implement the order-matching logic on each client node
     - [x] Check if any newly submitted order matches with existing orders in the order book
     - [x] Execute trades when orders match, and update the order book accordingly
 - [x] When an order is matched or updated (e.g., partially filled), broadcast the changes to all nodes in the network using Grenache
 
 
 # Edge Cases
-- [ ] Handle Partial Fills and Remaining Orders - create a new order with the remaining quantity and add it back to the order book
+- [x] Handle Partial Fills and Remaining Orders - Create a new order with the remaining quantity and add it back to the order book
 
 # Best Practices
 - [x] Error Handling and Resilience
-- [ ] Testing and Optimization - Unit tests, integration tests can be implemented using mocha/chai
+- [ ] Testing and Optimization - Unit tests, and integration tests can be implemented using mocha/chai
 - [x] Documentation 
-- [ ] Deployment - Can be done through Docker containers where each peer(server, client, etc) will run in a separate container
+- [ ] Deployment - Can be done through Docker containers where each peer(server, client, etc.) will run in a separate container
 
 ## Limitations
 
@@ -91,9 +91,9 @@ node test.js
 
 
 
-### Example RPC server / client with "Hello World"
+### Example RPC server/client with "Hello World"
 
-```js
+```
 // This RPC server will announce itself as `rpc_test`
 // in our Grape Bittorrent network
 // When it receives requests, it will answer with 'world'
@@ -129,7 +129,7 @@ service.on('request', (rid, key, payload, handler) => {
 
 ```
 
-```js
+```
 // This client will as the DHT for a service called `rpc_test`
 // and then establishes a P2P connection it.
 // It will then send { msg: 'hello' } to the RPC server
