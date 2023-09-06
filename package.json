@@ -1,0 +1,27 @@
+{
+  "name": "bfx-challenge",
+  "version": "1.0.0",
+  "description": "# The BFX challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohit6b/bitfinex.git"
+  },
+  "author": "Mohit Vashistha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohit6b/bitfinex/issues"
+  },
+  "homepage": "https://github.com/mohit6b/bitfinex#readme",
+  "dependencies": {
+    "grenache-nodejs-http": "^0.7.13",
+    "grenache-nodejs-link": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
