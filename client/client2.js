@@ -72,7 +72,10 @@ setInterval(function () {
 }, 5000)
 
 async function executeTrade(bestBuyOrder, bestSellOrder){
+  console.log('best buy order', bestBuyOrder)
+  console.log('sell order', bestSellOrder)
   const quantity = Math.min(bestBuyOrder.quantity, bestSellOrder.quantity);
+  console.log('quantity', quantity);
     orderBook.buyOrders[0].quantity -= quantity;
     orderBook.sellOrders[0].quantity -= quantity;
     if (bestBuyOrder.quantity === 0) {
@@ -115,7 +118,7 @@ setInterval(async function () {
     await executeTrade(bestBuyOrder, bestSellOrder);
     
      // server - orderBook original
-     peer.request('match_order', { msg: tempOrderBook }, { timeout: 10000 }, (err, data) => {
+     peer.request('match_order', { msg: orderBook }, { timeout: 10000 }, (err, data) => {
       if (err) {
         console.error(err)
         process.exit(-1)
